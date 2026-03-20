@@ -408,6 +408,44 @@
 
     .resource a.btn { margin-top: 10px; }
 
+    .link-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .link-item {
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.8);
+    }
+
+    .link-item p {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .link-url {
+      display: block;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(15,118,110,0.06);
+      border: 1px dashed rgba(15,118,110,0.18);
+      color: var(--teal);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .link-note {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
     .faq-list {
       display: grid;
       gap: 12px;
@@ -448,6 +486,7 @@
       <a href="#overview">一页总览</a>
       <a href="#steps">申请激活</a>
       <a href="#keepalive">保号策略</a>
+      <a href="#links">链接总表</a>
       <a href="#resources">资源入口</a>
       <a href="#faq">常见问题</a>
     </nav>
@@ -462,6 +501,7 @@
         <a class="btn primary" href="https://act.vodafone.nl/prepaid-esim/" target="_blank" rel="noopener">官方购买入口</a>
         <a class="btn" href="https://www.vodafone.nl/account/inloggen" target="_blank" rel="noopener">Vodafone 登录后台</a>
         <a class="btn" href="https://www.meiguodizhi.com/nl-address" target="_blank" rel="noopener">荷兰地址生成器</a>
+        <a class="btn" href="#links">查看原文全部关键链接</a>
         <a class="btn" href="https://potoh.com/posts/2026-1-5/wdfesim/" target="_blank" rel="noopener">原文参考页面</a>
       </div>
 
@@ -617,9 +657,86 @@
       </div>
     </section>
 
+    <section class="section" id="links">
+      <h2>原文关键链接总表</h2>
+      <p class="intro">这部分是按你的要求重新补上的重点。原文里真正有用的链接，我都单独列出来了，而且不只保留按钮，还把完整 URL 直接展示出来，方便你转发、复制、归档。</p>
+      <div class="link-list">
+        <article class="link-item">
+          <span class="tag teal">视频教程</span>
+          <h3>YouTube 完整版视频</h3>
+          <p>适合第一次接触这类 eSIM 的人先看一遍，能更快理解整个购买、激活和保号流程。</p>
+          <a class="link-url" href="https://youtu.be/RGu5jTQgKKw" target="_blank" rel="noopener">https://youtu.be/RGu5jTQgKKw</a>
+        </article>
+
+        <article class="link-item">
+          <span class="tag">视频教程</span>
+          <h3>B 站视频</h3>
+          <p>如果你平时更习惯在 B 站看流程演示，可以直接走这个入口。</p>
+          <a class="link-url" href="https://www.bilibili.com/video/BV1psztB7E3w/" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1psztB7E3w/</a>
+        </article>
+
+        <article class="link-item">
+          <span class="tag rose">视频教程</span>
+          <h3>小红书视频</h3>
+          <p>原文里也给了小红书入口，我这里保留完整链接，方便你直接分享。</p>
+          <a class="link-url" href="https://www.xiaohongshu.com/discovery/item/695b9118000000001a025414?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=ABNzbNVrXR-AAOsLtz9cBu7CfDY-QiRTm78LUCxI42lIY=&amp;xsec_source=pc_share" target="_blank" rel="noopener">https://www.xiaohongshu.com/discovery/item/695b9118000000001a025414?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=ABNzbNVrXR-AAOsLtz9cBu7CfDY-QiRTm78LUCxI42lIY=&amp;xsec_source=pc_share</a>
+        </article>
+
+        <article class="link-item">
+          <span class="tag teal">购买相关</span>
+          <h3>Vodafone 官方 eSIM 页面</h3>
+          <p>这是原文中真正用于购买的核心入口，后续很多步骤都是围绕这个页面展开的。</p>
+          <a class="link-url" href="https://act.vodafone.nl/prepaid-esim/" target="_blank" rel="noopener">https://act.vodafone.nl/prepaid-esim/</a>
+        </article>
+
+        <article class="link-item">
+          <span class="tag">设备辅助</span>
+          <h3>Xesim 外置 eSIM 方案介绍</h3>
+          <p>如果你的手机本身不支持 eSIM，原文建议参考这个 Xesim 方案。</p>
+          <a class="link-url" href="https://potoh.com/posts/2025-12-26/xesim/" target="_blank" rel="noopener">https://potoh.com/posts/2025-12-26/xesim/</a>
+          <div class="link-note">原文备注：9 折优惠码为 <strong>porter</strong>。</div>
+        </article>
+
+        <article class="link-item">
+          <span class="tag rose">支付辅助</span>
+          <h3>Bitget 虚拟卡入口</h3>
+          <p>原文把它作为没有国际卡时的辅助支付方案之一，我这里也完整保留下来。</p>
+          <a class="link-url" href="https://potoh.com/posts/2025-12-3/bitget-card/" target="_blank" rel="noopener">https://potoh.com/posts/2025-12-3/bitget-card/</a>
+        </article>
+
+        <article class="link-item">
+          <span class="tag teal">资料辅助</span>
+          <h3>荷兰地址生成器</h3>
+          <p>下单或补资料时可能会临时用到。这里保留原文里的完整地址工具链接。</p>
+          <a class="link-url" href="https://www.meiguodizhi.com/nl-address" target="_blank" rel="noopener">https://www.meiguodizhi.com/nl-address</a>
+        </article>
+
+        <article class="link-item">
+          <span class="tag">后台入口</span>
+          <h3>Vodafone 账户登录页</h3>
+          <p>激活后注册账号、充值、查看余额都要从这个页面进入。</p>
+          <a class="link-url" href="https://www.vodafone.nl/account/inloggen" target="_blank" rel="noopener">https://www.vodafone.nl/account/inloggen</a>
+        </article>
+
+        <article class="link-item">
+          <span class="tag rose">社群入口</span>
+          <h3>Telegram 交流群</h3>
+          <p>这是原文保留的群组邀请链接，如果你分享给朋友，这一条通常会被问得最多。</p>
+          <a class="link-url" href="https://t.me/+rygnGbaExpJmMjc1" target="_blank" rel="noopener">https://t.me/+rygnGbaExpJmMjc1</a>
+        </article>
+
+        <article class="link-item">
+          <span class="tag teal">原文来源</span>
+          <h3>原始文章页面</h3>
+          <p>如果你想回到最初出处核对上下文，这里就是原文页面本身。</p>
+          <a class="link-url" href="https://potoh.com/posts/2026-1-5/wdfesim/" target="_blank" rel="noopener">https://potoh.com/posts/2026-1-5/wdfesim/</a>
+        </article>
+      </div>
+    </section>
+
     <section class="section" id="resources">
       <h2>资源入口</h2>
-      <p class="intro">我把关键入口整理成了更适合收藏的形式。优先使用官方入口，其他资源仅作辅助。</p>
+      <p class="intro">这里继续保留按钮版入口，适合手机上直接点开。上面的“链接总表”更适合转发和复制，这里更适合实际点击使用。</p>
       <div class="resource-grid">
         <article class="resource">
           <span class="tag teal">官方入口</span>
