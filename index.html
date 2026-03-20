@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>荷兰 Vodafone eSIM 整理页</title>
+  <meta name="description" content="把荷兰 Vodafone 预付费 eSIM 的核心信息、激活步骤、保号策略和注意事项整理成一页读懂的中文网页。">
+  <meta name="theme-color" content="#0f766e">
+  <style>
+    :root {
+      --bg: #f7f5ef;
+      --paper: rgba(255,255,255,0.88);
+      --ink: #10221c;
+      --muted: #54625d;
+      --line: rgba(16,34,28,0.12);
+      --teal: #0f766e;
+      --teal-soft: rgba(15,118,110,0.12);
+      --amber: #b7791f;
+      --amber-soft: rgba(183,121,31,0.12);
+      --rose: #c2416c;
+      --rose-soft: rgba(194,65,108,0.12);
+      --sky: #2563eb;
+      --shadow: 0 18px 42px rgba(18, 34, 28, 0.10);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(15,118,110,0.20), transparent 28%),
+        radial-gradient(circle at top right, rgba(183,121,31,0.18), transparent 30%),
+        linear-gradient(180deg, #fbfaf6 0%, #f2ede1 100%);
+    }
+
+    a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 28px));
+      margin: 0 auto;
+      padding: 24px 0 60px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 12px;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 252, 247, 0.82);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 26px rgba(32, 40, 38, 0.08);
+    }
+
+    .nav a {
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: var(--ink);
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(16,34,28,0.08);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero,
+    .section,
+    .footer-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 34px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(245,248,244,0.90)),
+        radial-gradient(circle at 85% 20%, rgba(37,99,235,0.12), transparent 25%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--teal-soft);
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Songti SC", "STSong", "Noto Serif SC", serif;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.05;
+    }
+
+    h2 {
+      font-size: clamp(26px, 3.2vw, 38px);
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .lead, .muted, li, td, th, p {
+      line-height: 1.82;
+    }
+
+    .meta { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
+    .lead { margin: 16px 0 0; color: var(--muted); font-size: 16px; max-width: 760px; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 0.9fr;
+      gap: 20px;
+      margin-top: 22px;
+    }
+
+    .hero-side {
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.76);
+      border: 1px solid var(--line);
+    }
+
+    .big-number {
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1;
+      color: var(--teal);
+      font-weight: 800;
+      margin: 6px 0 12px;
+    }
+
+    .hero-side p { margin: 0; color: var(--muted); }
+
+    .button-row,
+    .link-grid,
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .button-row { margin-top: 18px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.85);
+      color: var(--ink);
+    }
+
+    .btn.primary {
+      color: white;
+      background: linear-gradient(135deg, #0f766e, #0b5d56);
+      border-color: transparent;
+    }
+
+    .chip {
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: 13px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: 26px;
+    }
+
+    .intro {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .card,
+    .step,
+    .faq,
+    .calculator,
+    .table-wrap,
+    .resource {
+      background: rgba(255,255,255,0.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+    }
+
+    .card {
+      padding: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: var(--amber-soft);
+      color: var(--amber);
+    }
+
+    .tag.teal { background: var(--teal-soft); color: var(--teal); }
+    .tag.rose { background: var(--rose-soft); color: var(--rose); }
+
+    .card strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .overview {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .table-wrap {
+      overflow: auto;
+      padding: 6px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid rgba(16,34,28,0.08);
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--ink);
+      background: rgba(15,118,110,0.07);
+      font-weight: 800;
+    }
+
+    .callout {
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(135deg, rgba(15,118,110,0.08), rgba(37,99,235,0.06));
+      border: 1px solid rgba(15,118,110,0.10);
+    }
+
+    .callout p {
+      margin: 0 0 10px;
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .step {
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step::before {
+      content: attr(data-step);
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      font-size: 48px;
+      line-height: 1;
+      color: rgba(15,118,110,0.08);
+      font-weight: 800;
+    }
+
+    .step p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .compare {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .price-box {
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.78);
+    }
+
+    .price-line {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin: 6px 0 12px;
+    }
+
+    .price {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--teal);
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .calculator {
+      margin-top: 18px;
+      padding: 20px;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      align-items: end;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    select, input[type="range"] {
+      width: 100%;
+    }
+
+    select {
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--ink);
+    }
+
+    .result-box {
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(15,118,110,0.12);
+      background: rgba(15,118,110,0.08);
+    }
+
+    .result-box strong { font-size: 22px; }
+    .result-box p { margin: 4px 0 0; color: var(--muted); }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .resource {
+      padding: 18px;
+    }
+
+    .resource a.btn { margin-top: 10px; }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq {
+      padding: 18px;
+    }
+
+    .faq p { margin: 0; color: var(--muted); }
+
+    .footer-card {
+      margin-top: 18px;
+      padding: 22px 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(247,246,240,0.92));
+    }
+
+    .footer-card p { margin: 8px 0; color: var(--muted); }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .overview,
+      .timeline,
+      .compare,
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero, .section { padding: 22px; }
+      .nav { border-radius: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <a href="#top">首页</a>
+      <a href="#highlights">核心亮点</a>
+      <a href="#overview">一页总览</a>
+      <a href="#steps">申请激活</a>
+      <a href="#keepalive">保号策略</a>
+      <a href="#resources">资源入口</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+
+    <header class="hero" id="top">
+      <span class="eyebrow">Vodafone NL · eSIM · 一页读懂</span>
+      <h1>荷兰 Vodafone eSIM<br>整理成了你的网页版本</h1>
+      <p class="lead">这是一页重组后的专题整理页：把公开页面里分散的信息压缩成更适合收藏、分享和回看的结构。我们保留核心事实、步骤与价格逻辑，但整体文案与视觉都重新整理成你的版本，读起来更快，拿来即用。</p>
+      <p class="meta">适合用途：海外备用号、接收验证码、长期低成本保号、注册 Telegram / WhatsApp / 海外服务前的号码准备。</p>
+
+      <div class="button-row">
+        <a class="btn primary" href="https://act.vodafone.nl/prepaid-esim/" target="_blank" rel="noopener">官方购买入口</a>
+        <a class="btn" href="https://www.vodafone.nl/account/inloggen" target="_blank" rel="noopener">Vodafone 登录后台</a>
+        <a class="btn" href="https://www.meiguodizhi.com/nl-address" target="_blank" rel="noopener">荷兰地址生成器</a>
+        <a class="btn" href="https://potoh.com/posts/2026-1-5/wdfesim/" target="_blank" rel="noopener">原文参考页面</a>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-side">
+          <div class="chip-row">
+            <span class="chip">中国大陆可接收短信</span>
+            <span class="chip">年保号成本可低至约 1.1 元</span>
+            <span class="chip">号码前缀 +31</span>
+          </div>
+          <div class="big-number">¥1.1–10</div>
+          <p>按公开页面提供的两种思路估算，保号年成本区间大约在 1.1 元到 10 元人民币之间。区别主要取决于你使用普通漫游短信，还是基于 Wi‑Fi Calling 的更低成本方案。</p>
+        </div>
+        <div class="hero-side">
+          <span class="tag teal">适合人群</span>
+          <p>如果你想要一张<strong>不用长期大额充值</strong>、能够<strong>接码</strong>、又能维持<strong>海外号码身份</strong>的备用卡，这张 Vodafone eSIM 的思路很清晰：买卡、激活、充值一次、记得每 170–180 天做一次余额变动。</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" id="highlights">
+      <h2>核心亮点</h2>
+      <p class="intro">先不看长文，直接看最值得关心的几点。你要判断这张卡值不值得上手，其实看这几个条件就够了。</p>
+      <div class="cards">
+        <article class="card">
+          <span class="tag teal">接码能力</span>
+          <strong>中国大陆可正常接收短信</strong>
+          <p>对于只想维持海外号码和收验证码的人来说，这一点是最关键的。公开页面明确强调其在中国大陆场景下依然具备免费接收短信的可用性。</p>
+        </article>
+        <article class="card">
+          <span class="tag">保号成本</span>
+          <strong>长期持有压力很低</strong>
+          <p>按照页面给出的示例，10 欧余额可以支持很长的维持周期。若按更低成本方案执行，年维护成本可以压到非常低。</p>
+        </article>
+        <article class="card">
+          <span class="tag rose">设备支持</span>
+          <strong>eSIM 设备可直接使用</strong>
+          <p>支持 eSIM 的手机可直接扫码添加；若设备本身不支持 eSIM，也可以考虑外置 eSIM 适配卡托这类方案。</p>
+        </article>
+        <article class="card">
+          <span class="tag teal">功能范围</span>
+          <strong>可覆盖 iMessage / FaceTime</strong>
+          <p>页面列出的支持项目包括 iMessage、FaceTime，以及在特定网络条件下的 Wi‑Fi Calling。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <h2>一页总览</h2>
+      <div class="overview">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>项目</th>
+                <th>整理后的信息</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>运营商</td><td>Vodafone Netherlands（荷兰 Vodafone 预付费 eSIM）</td></tr>
+              <tr><td>号码前缀</td><td>+31</td></tr>
+              <tr><td>购卡示例</td><td>公开页面给出的常见入口为 7 天 14 欧的预付费 eSIM 活动页</td></tr>
+              <tr><td>中国大陆漫游</td><td>可漫游到中国移动 / 中国联通 4G 网络</td></tr>
+              <tr><td>短信接收</td><td>可在中国大陆场景下接收短信</td></tr>
+              <tr><td>附加功能</td><td>iMessage、FaceTime、特定条件下的 Wi‑Fi Calling</td></tr>
+              <tr><td>更换设备</td><td>删除后可再次通过二维码添加到新设备</td></tr>
+              <tr><td>保号规则</td><td>每 180 天需要触发一次余额变动</td></tr>
+              <tr><td>激活信息</td><td>激活码与 SIM PIN 不是同一个东西；PIN 常见示例为 0000</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <h3>先记住这一句</h3>
+          <p><strong>这不是一张拿来当主力流量卡的产品，</strong>它更像一张便宜、轻量、适合长期保留身份和接码能力的海外备用号。</p>
+          <p>你真正要管的只有三件事：<strong>买卡、激活、记提醒</strong>。后续的大部分价值都来自“维护成本足够低”。</p>
+          <div class="chip-row">
+            <span class="chip">建议关闭移动数据</span>
+            <span class="chip">每 170–180 天提醒一次</span>
+            <span class="chip">充值后先确认余额与验证码</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="steps">
+      <h2>申请与激活步骤</h2>
+      <p class="intro">下面这套流程是把原页面的零散说明改写成了更易执行的版本。第一次做时，建议你边操作边对照。</p>
+      <div class="timeline">
+        <article class="step" data-step="01">
+          <h3>购买 eSIM</h3>
+          <p>打开 Vodafone 荷兰预付费 eSIM 页面，选择入门套餐。页面示例是 7 天 14 欧。购买时填写能收邮件的邮箱，用于接收 eSIM 二维码与相关信息。</p>
+        </article>
+        <article class="step" data-step="02">
+          <h3>下载并添加到手机</h3>
+          <p>支付完成后，用手机扫描二维码添加 eSIM。添加完成后进入激活流程，注意输入的是<strong>激活码</strong>而不是 PIN。</p>
+        </article>
+        <article class="step" data-step="03">
+          <h3>完成初始激活</h3>
+          <p>根据页面示例，SIM PIN 常见初始值为 0000。激活后，建议先确认是否收到了欢迎短信，再继续后面的账号注册与充值。</p>
+        </article>
+        <article class="step" data-step="04">
+          <h3>注册后台并充值</h3>
+          <p>使用新号码登录 Vodafone 后台，接收短信验证码，完成资料补充后充值。页面示例中，充值后约有 10 欧余额，对应大约 180 天有效期。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="keepalive">
+      <h2>保号策略与成本测算</h2>
+      <p class="intro">这个页面最有价值的部分之一，就是它把“如何长期保号”说得很清楚。核心规则只有一条：<strong>每 180 天让余额发生一次变动</strong>。</p>
+
+      <div class="compare">
+        <div class="price-box">
+          <span class="tag teal">方案 A</span>
+          <h3>普通漫游短信</h3>
+          <div class="price-line">
+            <span class="price">0.6€</span>
+            <span class="small">/ 条</span>
+          </div>
+          <p class="small">按页面示例估算，如果你每半年发 1 条短信，年成本大约是 1.2 欧，折合约 10 元人民币。</p>
+        </div>
+        <div class="price-box">
+          <span class="tag rose">方案 B</span>
+          <h3>Wi‑Fi Calling 短信</h3>
+          <div class="price-line">
+            <span class="price">0.07€</span>
+            <span class="small">/ 条</span>
+          </div>
+          <p class="small">按页面示例估算，年成本约 0.14 欧，折合大约 1.1 元人民币，但需要满足 Wi‑Fi Calling 的网络条件。</p>
+        </div>
+      </div>
+
+      <div class="calculator">
+        <h3>保号成本小计算器</h3>
+        <p class="intro">这是我帮你加的功能，方便你快速估算几年后的维护成本。</p>
+        <div class="calc-grid">
+          <div>
+            <label for="method">保号方式</label>
+            <select id="method">
+              <option value="0.6">普通漫游短信（0.6€/条）</option>
+              <option value="0.07">Wi‑Fi Calling 短信（0.07€/条）</option>
+            </select>
+          </div>
+          <div>
+            <label for="years">计划持有年数：<span id="years-text">3 年</span></label>
+            <input type="range" id="years" min="1" max="10" step="1" value="3">
+          </div>
+          <div class="result-box">
+            <strong id="calc-eur">€3.60</strong>
+            <p id="calc-cny">约 ¥28.80（按 1€ ≈ ¥8 估算）</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resources">
+      <h2>资源入口</h2>
+      <p class="intro">我把关键入口整理成了更适合收藏的形式。优先使用官方入口，其他资源仅作辅助。</p>
+      <div class="resource-grid">
+        <article class="resource">
+          <span class="tag teal">官方入口</span>
+          <h3>Vodafone 预付费 eSIM</h3>
+          <p>这是最核心的入口，页面里的购买步骤就是从这里开始的。</p>
+          <a class="btn primary" href="https://act.vodafone.nl/prepaid-esim/" target="_blank" rel="noopener">打开官方页面</a>
+        </article>
+        <article class="resource">
+          <span class="tag">后台管理</span>
+          <h3>Vodafone 登录页</h3>
+          <p>激活成功后，后续充值、查看余额、管理号码都会用到这个入口。</p>
+          <a class="btn" href="https://www.vodafone.nl/account/inloggen" target="_blank" rel="noopener">打开登录后台</a>
+        </article>
+        <article class="resource">
+          <span class="tag rose">资料辅助</span>
+          <h3>荷兰地址生成器</h3>
+          <p>用于下单或补资料时临时参考。使用前请自行判断场景合规性。</p>
+          <a class="btn" href="https://www.meiguodizhi.com/nl-address" target="_blank" rel="noopener">打开地址工具</a>
+        </article>
+        <article class="resource">
+          <span class="tag teal">原始出处</span>
+          <h3>公开页面参考</h3>
+          <p>本页基于该公开页面的信息做了结构整理与视觉改写，建议结合原始页面交叉核对。</p>
+          <a class="btn" href="https://potoh.com/posts/2026-1-5/wdfesim/" target="_blank" rel="noopener">查看原文</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <h2>常见问题</h2>
+      <div class="faq-list">
+        <article class="faq">
+          <h3>这张卡最适合拿来做什么？</h3>
+          <p>最适合做长期备用号、接码号、海外服务注册辅助号，而不是高频上网的主力卡。</p>
+        </article>
+        <article class="faq">
+          <h3>为什么要记 180 天？</h3>
+          <p>因为页面给出的核心规则就是：账户余额每 180 天需要有一次变动。只要把这件事做成日历提醒，保号难度会降很多。</p>
+        </article>
+        <article class="faq">
+          <h3>为什么建议关闭移动数据？</h3>
+          <p>因为这张卡的价值主要在身份和接码，若无意中走了漫游数据，反而会增加额外扣费风险。</p>
+        </article>
+        <article class="faq">
+          <h3>能不能换手机继续用？</h3>
+          <p>公开页面给出的说法是可以。删除后重新扫码添加到新设备即可，但你最好保留最初收到的二维码邮件与账户信息。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="footer-card">
+      <h3>整理说明</h3>
+      <p>本页不是原文镜像，而是基于公开页面信息做的重新编排、改写与视觉化整理，目的是让信息更适合保存、复看和分享。</p>
+      <p>引用来源：<a href="https://potoh.com/posts/2026-1-5/wdfesim/" target="_blank" rel="noopener">Porter 科技迷公开页面</a>。如需最新价格、激活政策或漫游规则，请以官方页面与实际页面展示为准。</p>
+      <p>合规提醒：涉及跨境通信、账号注册、网络服务和支付环节时，请自行确认所在地区法规、平台政策以及运营商条款。</p>
+    </section>
+  </div>
+
+  <script>
+    const years = document.getElementById('years');
+    const yearsText = document.getElementById('years-text');
+    const method = document.getElementById('method');
+    const calcEur = document.getElementById('calc-eur');
+    const calcCny = document.getElementById('calc-cny');
+
+    function updateCalc() {
+      const y = Number(years.value);
+      const costPerMsg = Number(method.value);
+      const annualCost = costPerMsg * 2;
+      const total = annualCost * y;
+      const cny = total * 8;
+      yearsText.textContent = `${y} 年`;
+      calcEur.textContent = `€${total.toFixed(2)}`;
+      calcCny.textContent = `约 ¥${cny.toFixed(2)}（按 1€ ≈ ¥8 估算）`;
+    }
+
+    years.addEventListener('input', updateCalc);
+    method.addEventListener('change', updateCalc);
+    updateCalc();
+  </script>
+</body>
+</html>
